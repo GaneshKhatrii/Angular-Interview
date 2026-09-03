@@ -1,0 +1,65 @@
+$bg-panel: #111827;
+$accent-cyan: #4fd1c5;
+
+.nav-link-btn {
+  background-color: transparent !important;
+  color: inherit !important;
+  .dropdown-arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Global Menu Overrides
+::ng-deep .custom-dropdown-panel {
+  background-color: $bg-panel !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  min-width: 300px !important;
+
+  .dropdown-header {
+    padding: 12px 20px 8px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: $accent-cyan;
+    font-weight: bold;
+  }
+
+  .dropdown-item-custom {
+    height: auto !important;
+    padding: 8px 20px !important;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.03) !important;
+    }
+
+    .item-icon {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 20px;
+    }
+    .item-title {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .badge-tag {
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba($accent-cyan, 0.1);
+      color: $accent-cyan;
+
+      &.popular {
+        color: #f59e0b;
+        background: rgba(#f59e0b, 0.1);
+      }
+      &.advanced {
+        color: #a855f7;
+        background: rgba(#a855f7, 0.1);
+      }
+    }
+  }
+}

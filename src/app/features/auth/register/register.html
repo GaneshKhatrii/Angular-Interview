@@ -1,1 +1,119 @@
-<p>register works!</p>
+<section>
+  <form class="authForm" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input formControlName="UserName" matInput type="text" />
+        @if (showError('UserName')) {
+          <mat-error>{{ showError('UserName') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Role</mat-label>
+        <input formControlName="Role" matInput type="text" />
+        @if (showError('Role')) {
+          <mat-error>{{ showError('Role') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input formControlName="CompanyContactNo" matInput type="text" />
+        @if (showError('CompanyContactNo')) {
+          <mat-error>{{ showError('CompanyContactNo') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="CompanyEmailId" matInput type="text" />
+        @if (showError('CompanyEmailId')) {
+          <mat-error>{{ showError('CompanyEmailId') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="Password" matInput type="text" />
+        @if (showError('Password')) {
+          <mat-error>{{ showError('Password') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input formControlName="ConfirmPassword" matInput type="text" />
+        @if (showError('ConfirmPassword')) {
+          <mat-error>{{ showError('ConfirmPassword') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <hr />
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Company Name</mat-label>
+        <input formControlName="CompanyName" matInput type="text" />
+        @if (showError('CompanyName')) {
+          <mat-error>{{ showError('CompanyName') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Company Full Address</mat-label>
+        <input formControlName="CompanyFullAddress" matInput type="text" />
+        @if (showError('CompanyFullAddress')) {
+          <mat-error>{{ showError('CompanyFullAddress') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Company Website Link</mat-label>
+        <input formControlName="CompanyWebsiteLink" matInput type="text" />
+        @if (showError('CompanyWebsiteLink')) {
+          <mat-error>{{ showError('CompanyWebsiteLink') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Corporate Identification No</mat-label>
+        <input formControlName="CorporateIdentificationNo" matInput type="text" />
+        @if (showError('CorporateIdentificationNo')) {
+          <mat-error>{{ showError('CorporateIdentificationNo') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Company Logo</mat-label>
+        <input formControlName="CompanyLogo" matInput type="text" />
+        @if (showError('CompanyLogo')) {
+          <mat-error>{{ showError('CompanyLogo') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Company Stamp</mat-label>
+        <input formControlName="CompanyStamp" matInput type="text" />
+        @if (showError('CompanyStamp')) {
+          <mat-error>{{ showError('CompanyStamp') }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div>
+      <button class="btn btn-primary mt-3">Register</button>
+    </div>
+    <p routerLink="/login" class="text-center pb-5">Login</p>
+  </form>
+</section>

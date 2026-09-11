@@ -68,3 +68,29 @@ body.dark {
   margin: 0;
   box-sizing: border-box;
 }
+
+.authForm {
+  width: 600px;
+  margin: 100px auto;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.toast-success .mdc-snackbar__surface {
+  background-color: green !important;
+  color: white;
+}
+.toast-danger .mdc-snackbar__surface {
+  background-color: red !important;
+  color: white;
+}
+.toast-warning .mdc-snackbar__surface {
+  background-color: yellow !important;
+  color: white;
+}
+.toast-info .mdc-snackbar__surface {
+  background-color: grey !important;
+  color: white;
+}

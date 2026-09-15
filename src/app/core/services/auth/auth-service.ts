@@ -32,6 +32,6 @@ export class AuthService {
     return this.http.post<ApiResponse<string>>(`${this.baseUrl}/register`, formData);
   }
   onLogin(userObj: IUserLoginRequest) {
-    return this.http.post<ApiResponse<IUserLoginResponse>>(`${this.baseUrl}/register`, userObj);
+    return this.http.post<ApiResponse<IUserLoginResponse>>(`${this.baseUrl}/login`, userObj);
   }
 }

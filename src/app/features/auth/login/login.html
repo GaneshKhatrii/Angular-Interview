@@ -1,16 +1,27 @@
 <section>
-  <form>
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" class="authForm">
     <div>
       <mat-form-field appearance="outline">
         <mat-label>User Name</mat-label>
-        <input matInput type="text" placeholder="User Name" />
-      </mat-form-field>
-    </div>
-
-    <div>
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Email" />
+        <input
+          [(ngModel)]="loginObj.userName"
+          name="userName"
+          #userName="ngModel"
+          matInput
+          type="text"
+          placeholder="User Name"
+          required
+          pattern="^[a-zA-Z\\s]*$"
+        />
+        <mat-error>
+          @if (userName.touched || userName.dirty) {
+            @if (userName.errors?.['required']) {
+              User Name is required
+            } @else if (userName.errors?.['pattern']) {
+              Enter valid alphabets only
+            }
+          }
+        </mat-error>
       </mat-form-field>
     </div>
 
@@ -18,25 +29,34 @@
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input
+          [(ngModel)]="loginObj.password"
+          name="password"
+          #password="ngModel"
+          required
+          minlength="6"
           matInput
           [type]="hidePassword() ? 'password' : 'text'"
           placeholder="Password"
         />
-        <button
-          mat-icon-button
-          matSuffix
-          type="button"
-          (click)="togglePasswordVisibility()"
-        >
-          <mat-icon
-            >{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon
-          >
+        <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
+          <mat-icon>{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
+        <mat-error>
+          @if (password.touched || password.dirty) {
+            @if (password.errors?.['required']) {
+              Password is required
+            } @else if (password.errors?.['minlength']) {
+              Password must be atleast 6 characters
+            }
+          }
+        </mat-error>
       </mat-form-field>
     </div>
 
     <div>
       <button class="btn btn-primary">Login</button>
     </div>
+
+    <p routerLink="/register" class="text-center">Register</p>
   </form>
 </section>

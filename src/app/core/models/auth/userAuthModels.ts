@@ -15,9 +15,8 @@ export interface IUserRegisterResponse {
   message: string;
 }
 export interface IUserLoginRequest {
-  UserName: string;
-  CompanyEmailId: string;
-  Password: string;
+  userName: string;
+  password: string;
 }
 export interface IUserLoginResponse {
   token: string;

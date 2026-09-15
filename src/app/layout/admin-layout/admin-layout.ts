@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin-layout',
@@ -7,4 +7,10 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './admin-layout.html',
   styleUrl: './admin-layout.scss',
 })
-export class AdminLayout {}
+export class AdminLayout {
+  private router = inject(Router);
+  onLogout() {
+    localStorage.removeItem('loginData');
+    this.router.navigate(['/login']);
+  }
+}

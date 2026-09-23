@@ -68,6 +68,9 @@ body.dark {
   margin: 0;
   box-sizing: border-box;
 }
+p {
+  margin-bottom: 0;
+}
 
 .authForm {
   width: 600px;
@@ -93,4 +96,10 @@ body.dark {
 .toast-info .mdc-snackbar__surface {
   background-color: grey !important;
   color: white;
+}
+
+.cursor-p {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
 }

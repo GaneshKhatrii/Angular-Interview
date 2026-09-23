@@ -1,0 +1,12 @@
+.dashboard {
+  display: flex;
+  .sideNav {
+    width: 200px;
+    background-color: rgb(255, 229, 229);
+    border-right: 1px solid grey;
+    padding: 1rem;
+  }
+  .mainBody {
+    width: calc(100% - 200px);
+  }
+}
